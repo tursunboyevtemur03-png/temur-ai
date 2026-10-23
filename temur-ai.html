@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Temur Ai — Video uchun diktor ovozlari</title>
+<style>
+:root{--bg:#050d24;--bg2:#0a1a45;--card:#0d2158;--blue:#2f6bff;--cyan:#4fc3ff;--text:#fff;--mut:#a9b8de;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(900px 500px at 80% -10%,#15338a55,transparent),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;overflow-x:hidden}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:#050d24cc;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff14}
+.nav{max-width:1100px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;text-decoration:none;color:#fff}
+.logo i{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;box-shadow:0 0 22px #2f6bff88;animation:glow 3s infinite}
+.logo i svg{width:22px;height:22px}
+.logo b{color:var(--cyan)}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:99px;background:#ffffff0f;border:1px solid #ffffff1f;color:#fff;text-decoration:none;font-size:14px;transition:.25s}
+.pill:hover{background:var(--blue);transform:translateY(-2px)}
+.pill svg{width:16px;height:16px;fill:currentColor}
+.hero{max-width:1100px;margin:auto;padding:70px 18px 40px;text-align:center}
+.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.1;font-weight:800}
+.hero h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);max-width:560px;margin:16px auto 26px;font-size:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:14px;border:0;background:linear-gradient(135deg,var(--blue),#1747c9);color:#fff;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;transition:.25s;box-shadow:0 8px 28px #2f6bff55}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.btn.call{animation:pulse 2s infinite}
+.btn.ghost{background:#ffffff12;box-shadow:none;border:1px solid #ffffff26}
+.wave{display:flex;gap:5px;justify-content:center;align-items:center;height:50px;margin-top:34px}
+.wave span{width:5px;border-radius:5px;background:linear-gradient(var(--cyan),var(--blue));animation:eq 1.2s ease-in-out infinite}
+section{max-width:1100px;margin:auto;padding:30px 18px}
+h2{font-size:30px;text-align:center;margin-bottom:6px}
+.sub{text-align:center;color:var(--mut);margin-bottom:28px}
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:40px}
+.price{background:var(--card);border:1px solid #ffffff1a;border-radius:18px;padding:20px;text-align:center;transition:.3s}
+.price:hover{transform:translateY(-6px);border-color:var(--cyan)}
+.price small{color:var(--mut)}
+.price strong{display:block;font-size:30px;margin-top:4px}
+.price strong em{font-size:15px;font-style:normal;color:var(--cyan)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid #ffffff1a;border-radius:20px;padding:18px;opacity:0;transform:translateY(24px);transition:.6s,border-color .25s}
+.card.in{opacity:1;transform:none}
+.card:hover{border-color:var(--blue)}
+.row{display:flex;align-items:center;gap:14px}
+.play{width:54px;height:54px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;cursor:pointer;flex:none;display:grid;place-items:center;transition:.2s}
+.play:hover{transform:scale(1.1)}
+.play svg{width:22px;height:22px;fill:#fff}
+.name{font-weight:700;font-size:18px}
+.eq{display:flex;gap:3px;align-items:flex-end;height:22px;margin-top:4px}
+.eq span{width:4px;height:5px;border-radius:3px;background:var(--cyan);opacity:.5}
+.card.playing .eq span{opacity:1;animation:eq .9s ease-in-out infinite}
+.eq span:nth-child(2n){animation-delay:.2s!important}.eq span:nth-child(3n){animation-delay:.4s!important}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 12px}
+.opt{padding:9px 4px;border-radius:12px;border:1px solid #ffffff2a;background:transparent;color:#fff;cursor:pointer;font-size:13px;transition:.2s}
+.opt b{display:block;font-size:14px}
+.opt.on{background:var(--blue);border-color:var(--blue);box-shadow:0 0 16px #2f6bff77}
+.order{width:100%}
+.note{font-size:12px;color:var(--mut);margin-top:6px;min-height:16px}
+.contact{text-align:center;background:var(--card);border-radius:24px;border:1px solid #ffffff1a;padding:36px 18px;margin:30px auto}
+.contact .links{justify-content:center;margin-top:18px}
+footer{text-align:center;color:var(--mut);padding:24px;font-size:14px}
+@keyframes eq{0%,100%{height:6px}50%{height:46px}}
+.eq span{animation-name:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #2f6bffaa}70%{box-shadow:0 0 0 18px #2f6bff00}100%{box-shadow:0 0 0 0 #2f6bff00}}
+@keyframes glow{50%{box-shadow:0 0 34px #4fc3ffaa}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="logo" href="#"><i><svg viewBox="0 0 24 24" fill="#fff"><rect x="2" y="9" width="3" height="6" rx="1.5"/><rect x="7" y="5" width="3" height="14" rx="1.5"/><rect x="12" y="2" width="3" height="20" rx="1.5"/><rect x="17" y="6" width="3" height="12" rx="1.5"/></svg></i>Temur <b>Ai</b></a>
+<div class="links">
+<a class="pill" id="hIg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zM17.5 6.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3z"/></svg>Instagram</a>
+<a class="pill" id="hTg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.9 4.1L2.9 11.4c-1 .4-1 1.1-.2 1.3l4.9 1.5 1.9 5.7c.2.6.4.8.8.8s.6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15c.3-1.3-.5-1.9-1.3-1.7zM8.5 13.5l9.6-6c.5-.3.9-.1.5.2l-7.9 7.1-.3 3.3-1.9-4.6z"/></svg>Telegram</a>
+<a class="pill" id="hTel"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="phtxt"></span></a>
+</div></div></header>
+
+<div class="hero">
+<h1>Videongiz uchun <span>sifatli diktor ovozi</span></h1>
+<p>Biznesingiz reklamasi, reels va videolari uchun professional ovozlar. Ovozni tinglang, tanlang va buyurtma bering.</p>
+<a class="btn call" id="heroCall">📞 Hoziroq qo‘ng‘iroq qilish</a>
+<div class="wave" id="wave"></div>
+</div>
+
+<section>
+<h2>Narxlar</h2><p class="sub">Video davomiyligiga qarab</p>
+<div class="prices">
+<div class="price"><small>30 soniya</small><strong>49 000 <em>so‘m</em></strong></div>
+<div class="price"><small>1 daqiqa</small><strong>79 000 <em>so‘m</em></strong></div>
+<div class="price"><small>1,5 daqiqa</small><strong>99 000 <em>so‘m</em></strong></div>
+</div>
+<h2>Diktor ovozlari</h2><p class="sub">Ovozni tinglang, davomiylikni tanlang va buyurtma bering</p>
+<div class="grid" id="grid"></div>
+</section>
+
+<section><div class="contact">
+<h2>Buyurtma berish</h2><p class="sub">Telefon raqamni bossangiz, to‘g‘ridan-to‘g‘ri qo‘ng‘iroq qilinadi</p>
+<a class="btn call" id="bigCall" style="font-size:22px"></a>
+<div class="links"><a class="pill" id="cIg" target="_blank" rel="noopener">Instagram</a><a class="pill" id="cTg" target="_blank" rel="noopener">Telegram</a></div>
+</div></section>
+<footer>© Temur Ai — diktor ovozlari xizmati</footer>
+
+<script>
+// ===== SHU YERNI TAHRIRLANG =====
+var PHONE_RAW="+998944168782", PHONE_SHOW="+998 94 416 87 82";
+var TELEGRAM="nurbekivich"; // @ belgisiz username
+var INSTAGRAM="https://www.instagram.com/tursunboyev.temurrrrr";
+var VOICES=[]; for(var i=1;i<=12;i++)VOICES.push({name:"Ovoz "+i,src:""}); // src: audio fayl manzili
+// ================================
+var PR=[["30 soniya","49 000"],["1 daqiqa","79 000"],["1,5 daqiqa","99 000"]];
+function $(id){return document.getElementById(id)}
+var tel="tel:"+PHONE_RAW, tg="https://t.me/"+TELEGRAM;
+["hIg","cIg"].forEach(function(x){$(x).href=INSTAGRAM});
+["hTg","cTg"].forEach(function(x){$(x).href=tg});
+["hTel","heroCall","bigCall"].forEach(function(x){$(x).href=tel});
+document.querySelector(".phtxt").textContent=PHONE_SHOW;
+$("bigCall").textContent="📞 "+PHONE_SHOW;
+var w=$("wave");for(var k=0;k<28;k++){var s=document.createElement("span");s.style.animationDelay=(k*0.07)+"s";s.style.animationName="eq";w.appendChild(s)}
+var cur=null;
+var PLAY='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',PAUSE='<svg viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+VOICES.forEach(function(v,idx){
+ var c=document.createElement("div");c.className="card";c.style.transitionDelay=(idx%3)*0.1+"s";
+ var sel=0;
+ c.innerHTML='<div class="row"><button class="play" aria-label="Tinglash">'+PLAY+'</button><div><div class="name">'+v.name+'</div><div class="eq">'+'<span></span>'.repeat(14)+'</div></div></div>'+
+ '<div class="opts">'+PR.map(function(p,i){return '<button class="opt'+(i==0?' on':'')+'"><b>'+p[1]+'</b>'+p[0]+'</button>'}).join('')+'</div>'+
+ '<a class="btn order">📞 Buyurtma berish</a><div class="note"></div>';
+ var a=v.src?new Audio(v.src):null,btn=c.querySelector(".play"),note=c.querySelector(".note"),ord=c.querySelector(".order");
+ function link(){ord.href=tel;void("Salom! "+v.name+" ovozini "+PR[sel][0]+"lik video uchun ("+PR[sel][1]+" so‘m) buyurtma qilmoqchiman.")}
+ link();
+ c.querySelectorAll(".opt").forEach(function(o,i){o.onclick=function(){sel=i;c.querySelectorAll(".opt").forEach(function(x){x.classList.remove("on")});o.classList.add("on");link()}});
+ function stop(){if(a)a.pause();c.classList.remove("playing");btn.innerHTML=PLAY}
+ btn.onclick=function(){
+  if(!a){note.textContent="Ovoz tez orada qo‘shiladi";return}
+  if(c.classList.contains("playing")){stop();return}
+  if(cur&&cur!==stop)cur();
+  a.play();c.classList.add("playing");btn.innerHTML=PAUSE;cur=stop;
+ };
+ if(a)a.onended=stop;
+ $("grid").appendChild(c);
+});
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll(".card").forEach(function(c){io.observe(c)});
+</script>
+</body>
+</html>
